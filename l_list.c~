@@ -1,0 +1,11 @@
+#include <stdio.h>
+#include <stdlib.h>
+#include "node.h"
+void print_list(struct node * l_list){
+  while(l_list->next){
+    printf("%d", l_list->i);
+    l_list = l_list -> next;
+  }
+};
+struct node * insert_front(struct node * l_list, int addend);
+struct node * free_list(struct node * l_list);
