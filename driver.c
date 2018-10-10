@@ -5,10 +5,10 @@
 int main(){
 
 
-  struct node test_1;
-  test_1.i = 10;
-  test_1.next = NULL;
-  struct node * p_test_1 = &test_1;
+  struct node *test_1 = malloc(sizeof(struct node));
+  test_1->i = 10;
+  test_1->next = NULL;
+  struct node * p_test_1 = test_1;
     
   p_test_1 = insert_front(p_test_1, 6);
   p_test_1 = insert_front(p_test_1, 1);
@@ -29,7 +29,7 @@ int main(){
   p_test_1 = free_list(p_test_1);
 
   print_list(p_test_1);
-  printf("\n");
+  printf("%p\n", p_test_1);
   
   return 0;
 }
