@@ -21,7 +21,8 @@ struct node * insert_front(struct node * l_list, int addend){
 }
 
 struct node * free_list(struct node * l_list){
-
+  struct node * cu
+  struct node *
 
 
 
