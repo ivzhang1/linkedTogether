@@ -30,8 +30,8 @@ int main(){
   printf("\n");
 
   printf("Adding 10\n");
-  //struct node *new_start = insert_front(p_test_1, 10);
-  free_list(p_test_1);
+  p_test_1 = insert_front(p_test_1, 10);
+  //free_list(p_test_1);
   print_list(p_test_1);
   printf("\n");
   

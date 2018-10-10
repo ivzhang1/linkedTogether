@@ -10,14 +10,16 @@ void print_list(struct node * l_list){
 };
 struct node * insert_front(struct node * l_list, int addend){
   struct node *new;
-  l_list->i = addend;
-  l_list->next = new;
-  new = l_list;
 
-  return l_list;
+  new = malloc(sizeof(l_list));
+  new->i = addend;
+  new->next = l_list;
+
+  return new;
   
   
-};
+}
+
 struct node * free_list(struct node * l_list){
   struct node *temp = l_list->next;
   struct node *prev = l_list;
