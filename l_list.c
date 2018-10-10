@@ -21,15 +21,17 @@ struct node * insert_front(struct node * l_list, int addend){
 }
 
 struct node * free_list(struct node * l_list){
-  struct node *temp = l_list->next;
   struct node *prev = l_list;
-
-  while(temp -> next){
-
-    temp = l_list -> next;
-    prev = l_list;
-    free(prev);
+  struct node *curr = l_list->next;
+  
+  while(curr -> next){
+    prev -> i = 0;
+    prev -> next = NULL;
+    prev = curr;
+    curr = curr->next;
+        
   }
-
-  return temp;
+  
+  return l_list;
+  
 }

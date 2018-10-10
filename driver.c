@@ -31,7 +31,12 @@ int main(){
 
   printf("Adding 10\n");
   p_test_1 = insert_front(p_test_1, 10);
-  //free_list(p_test_1);
+  print_list(p_test_1);
+  printf("\n");
+
+  printf("CLEARING Linked List\n");
+  p_test_1 = free_list(p_test_1);
+
   print_list(p_test_1);
   printf("\n");
   
