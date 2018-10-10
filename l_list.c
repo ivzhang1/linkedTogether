@@ -3,7 +3,7 @@
 #include "node.h"
 
 void print_list(struct node * l_list){
-  while(l_list -> next){
+  while(l_list){
     printf("%d\n", l_list->i);
     l_list = l_list -> next;
   }
@@ -22,14 +22,12 @@ struct node * insert_front(struct node * l_list, int addend){
 
 struct node * free_list(struct node * l_list){
   struct node *prev = l_list;
-  struct node *curr = l_list->next;
+  struct node *curr = l_list;
   
-  while(curr -> next){
-    prev -> i = 0;
-    prev -> next = NULL;
+  while(prev->next){
+    free(prev);
     prev = curr;
     curr = curr->next;
-        
   }
   
   return l_list;
